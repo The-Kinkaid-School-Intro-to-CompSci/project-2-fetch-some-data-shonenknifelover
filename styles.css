@@ -13,9 +13,85 @@
 /** You can define your own CSS variables here */
 :root {
   /** Example: */
-  --main-background: rgb(61, 125, 202);
+  --main-background: rgb(203, 181, 155);
+}
+
+.charis-sil-bold {
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /** Project styling */
 
 /** Your styles go here */
+
+html {
+  background-color: var(--main-background) 
+}
+
+h1 {
+  color: rgb(255, 250, 245);
+  text-align: center;
+  font-size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+img {
+  width: 100px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+button {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+  color: rgb(125, 90, 67);
+
+}
+
+section {
+  margin: 20px;
+  display: flex;
+  width: 95%;
+  gap: 16px;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  font-family: "Charis SIL", serif;
+
+}
+
+.border {
+  border: 2px solid;
+  border-color: white;
+  padding: 20px;
+
+
+}
+
+input {
+
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+}
+
