@@ -1,60 +1,91 @@
-function displayTimes(prayerTimes){
-    let 
+
+// converts to am and pm
+function timeConversion(timeString){
+    const usTime = timeString.substring(0,2);
+    const minutes = timeString.substring(3,5);
+    let numTime = Number(usTime);
+    let period = "";
+    if(numTime === "00:"){
+        numTime += 12;
+        period += "AM";
+    }
+    else if(numTime < 12){
+        period += "AM";
+    }
+    else{
+        numTime -= 12;
+        period += "PM";
+    }
+    return `${numTime}:${minutes} ${period}`
 }
 
 
-async function getLocation(){
+
+function displayTimes(timesList){
+
+  
+
+
+    const todaysTimes = document.querySelector("#timesHeads");
+    const timingsData = timesList.data.timings
+
+    todaysTimes.textContent = `Fajr - ${timeConversion(timingsData.Fajr)} \nSunrise - ${timeConversion(timingsData.Sunrise)} \nDhur - ${timeConversion(timingsData.Dhuhr)} \nAsr - ${timeConversion(timingsData.Asr)} \nMaghrib - ${timeConversion(timingsData.Maghrib)} \nIsha - ${timeConversion(timingsData.Isha)}`;
+
+
+}
+
+async function getTimesFromLocation(position){
 
     //get what the user wrote
-    const searchBar = document.querySelector('#searchBar');
-    let city = searchBar.value; 
-    const apiURL = `https://prayertimes.api.abdus.dev/api/diyanet/search?q=${city}`
+    const userDate = document.querySelector('#userDate');
+    const date = userDate.value;
+    const year = date.substring(0,4);
+    const month = date.substring(5,7);
+    const day = date.substring(8,10);
+
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    console.log(`${latitude}, ${longitude}`)
+
+    const apiURL = `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?method=13&latitude=${latitude}&longitude=${longitude}`
 
     console.log(apiURL);
-    let locationsList = null;
+    let timesList = null;
 
     try {
         const response = await fetch(apiURL);
-        locationsList = await response.json();
-        console.log(locationsList);
-        const idObject = locationsList[0].id 
-        console.log(idObject);
+        timesList = await response.json();
+        console.log(timesList);
 
-        getTimes(idObject);
     }
     catch(error){
         console.log('error', error);
     }
      
+    displayTimes(timesList)
 
 }
 
-async function getTimes(id){
-    const apiURL = `https://prayertimes.api.abdus.dev/api/diyanet/prayertimes?location_id=${id}`;
-    const localJSON = 'prayertimes.json';
-
-    console.log(apiURL);
-    let prayerTimes = null;
-    try {
-        const response = await fetch(localJSON);
-        prayerTimes = await response.json();
-        console.log(prayerTimes);
+function askLocation(){
+    if(!navigator.geolocation) {
+        console.log("Your browser doesn't support Geolocation")
     }
-
-    catch(error){
-        console.log('error', error);
+    else {
+        navigator.geolocation.getCurrentPosition(
+            (position) => getTimesFromLocation(position),
+            () => {},
+            {maximumAge: 600000}
+        );
     }
-
-    displayTimes(prayerTimes);
 }
-
 
 
 function runProgram(){
 
     // getTimes();
     const searchButton = document.querySelector('#submitButton'); 
-    searchButton.addEventListener('click', getLocation);
+    searchButton.addEventListener('click', askLocation);
     console.log('runProgram');
     //your code goes here
 }

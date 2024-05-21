@@ -26,12 +26,10 @@
 
 /** Your styles go here */
 
-html {
-  background-color: var(--main-background) 
-}
+
 
 h1 {
-  color: rgb(255, 250, 245);
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 50px;
   font-family: "Charis SIL", serif;
@@ -58,7 +56,6 @@ button {
   size: 50px;
   font-family: "Charis SIL", serif;
   font-weight: 700;
-  color: rgb(125, 90, 67);
 
 }
 
@@ -66,20 +63,24 @@ section {
   margin: 20px;
   display: flex;
   width: 95%;
-  gap: 16px;
-  align-items: center;
+  gap: 0px;
+  align-items: left;
 }
 
 p {
-  text-align: center;
+
   font-family: "Charis SIL", serif;
+  color: rgb(0, 0, 0);
 
 }
 
-.border {
+#timeDisplay {
+  margin-left: auto;
+  margin-right: auto;
   border: 2px solid;
-  border-color: white;
+  border-color: rgb(0, 0, 0);
   padding: 20px;
+  text-align: left;
 
 
 }
@@ -93,5 +94,17 @@ input {
   size: 50px;
   font-family: "Charis SIL", serif;
   font-weight: 700;
+}
+
+
+
+#timesHeads {
+  display: flex;
+  margin-left: 500px;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: center;
+  font-family: "Charis SIL", serif;
+  white-space: pre-wrap;
 }
 
