@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@400;700&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>The name of your website</title> 
+        <title>Prayer Times Display</title> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+      
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-        Your HTML goes here
+        <header class="header">
+            <h1>Prayer Times Display</h1>
+            <img src="assets/30-300691_transparent-hd-moon-png-moon-and-star-png-removebg-preview.png">
+        </header>
+        <div role="input" id="locationSearch">
+            <input type="date" id="userDate"/>
+            <input type="submit" id="submitButton"value="Get times"/>
+        </div>
+        <section class="align-items-center"id="timeDisplay">
+            <div id="todaysTimes">
+                <p id="todayHead">Today's Times</p>
+            </div>
+            <div class="justify-content-center" id="timesHeads">
+            </div>
+        </section>
     </body>
 </html>

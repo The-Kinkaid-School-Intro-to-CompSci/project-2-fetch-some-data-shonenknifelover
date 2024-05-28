@@ -13,9 +13,98 @@
 /** You can define your own CSS variables here */
 :root {
   /** Example: */
-  --main-background: rgb(61, 125, 202);
+  --main-background: rgb(203, 181, 155);
+}
+
+.charis-sil-bold {
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /** Project styling */
 
 /** Your styles go here */
+
+
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+img {
+  width: 100px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+button {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+
+}
+
+section {
+  margin: 20px;
+  display: flex;
+  width: 95%;
+  gap: 0px;
+  align-items: left;
+}
+
+p {
+
+  font-family: "Charis SIL", serif;
+  color: rgb(0, 0, 0);
+
+}
+
+#timeDisplay {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid;
+  border-color: rgb(0, 0, 0);
+  padding: 20px;
+  text-align: left;
+
+
+}
+
+input {
+
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  size: 50px;
+  font-family: "Charis SIL", serif;
+  font-weight: 700;
+}
+
+
+
+#timesHeads {
+  display: flex;
+  margin-left: 500px;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: center;
+  font-family: "Charis SIL", serif;
+  white-space: pre-wrap;
+}
+
